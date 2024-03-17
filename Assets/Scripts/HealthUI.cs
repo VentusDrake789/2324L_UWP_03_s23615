@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 100; // Domyślne życie gracza
-    public TextMeshProUGUI healthText; // Referencja do komponentu tekstowego
+    public int health = 100;
+    public TextMeshProUGUI healthText;
 
     void Update()
     {
-        healthText.text = "Życie: " + health.ToString(); // Aktualizacja tekstu życia
+        healthText.text = "Życie: " + health.ToString();
     }
 }
