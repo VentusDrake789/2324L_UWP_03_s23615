@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D playerRB;
     public GameObject bulletPrefab;
+    public Rigidbody2D firePoint;
     public float bulletSpeed = 20f;
 
     private Vector2 movement;
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (direction != Vector2.zero) // Sprawdzamy, czy jest ustalony kierunek strzału
         {
-            GameObject bullet = Instantiate(bulletPrefab, playerRB.position + direction, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position + direction, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.velocity = direction.normalized * bulletSpeed;
         }

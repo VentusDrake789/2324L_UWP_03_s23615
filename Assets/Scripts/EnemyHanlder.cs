@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyHandler : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public GameObject bulletPrefab;

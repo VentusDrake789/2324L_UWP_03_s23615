@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public float spawnDelay = 4f;
+    public float spawnDelay = 2f;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             Vector2 randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-            enemy.GetComponent<Enemy>().setRandomDirection(randomDirection);
+            enemy.GetComponent<EnemyHandler>().setRandomDirection(randomDirection);
 
             yield return new WaitForSeconds(spawnDelay);
 
