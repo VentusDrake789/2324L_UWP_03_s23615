@@ -16,10 +16,8 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Sprawdzenie zasięgu do gracza
         if (Vector2.Distance(transform.position, player.position) <= shootingRange)
         {
-            // Zatrzymanie, jeśli gracz w zasięgu
             if (cooldownTimer > shootingCooldown)
             {
                 ShootAtPlayer();
@@ -33,7 +31,6 @@ public class Enemy : MonoBehaviour
 
         cooldownTimer += Time.deltaTime;
 
-        // Sprawdzenie, czy przeciwnik wyszedł poza ekran
         if (!IsVisibleFromCamera())
         {
             Destroy(gameObject);

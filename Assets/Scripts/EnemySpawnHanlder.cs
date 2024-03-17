@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Prefab przeciwnika do zespawnowania
-    public float spawnDelay = 4f; // Odstęp czasowy między spawnami
+    public GameObject enemyPrefab;
+    public float spawnDelay = 4f;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
             Vector2 randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             enemy.GetComponent<Enemy>().setRandomDirection(randomDirection);
 
-            yield return new WaitForSeconds(spawnDelay); // Oczekiwanie określonego czasu przed następnym spawnem
+            yield return new WaitForSeconds(spawnDelay);
 
         }
     }
